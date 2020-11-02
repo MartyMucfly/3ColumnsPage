@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarasov</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #maket{
+            width: 802px;
+            margin: auto;
+        }
+        nav{
+            position: relative;
+            z-index: 99;
+        }
+        ul{
+            white-space: nowrap;
+            padding: 0px;
+            height: 62.86px;
+            border: 1px solid #000;
+            border-radius: 30px;
+        }
+        ul li{
+            float: left;
+            position: relative;
+            padding: 0px;
+            list-style-type: none;
+           
+        }
+        ul a{
+            text-decoration: none;
+           background: linear-gradient(to bottom, yellow, blue); 
+            color: red;
+            display: block;
+            padding: 20px 19.01px;
+        }
+        ul li ul{
+            display: none;
+            border: none;
+        }
+        ul li:hover ul{
+            position: absolute;
+            display: block;
+        }
+        ul li:hover li{
+            width: 100%;
+        }
+        ul li:hover li a{
+            text-align: center;
+            padding: 18px 5px;
+           border: 1px solid #000; 
+        }
+        ul li:hover li:hover ul{
+            display: block;
+            position: absolute;
+            left: 100%;
+            top: 0;
+           
+        }
+        ul li:hover li ul{
+            display: none;  
+        }
+        
+        ul li:hover li ul li a{
+            border: 1px solid #000;
+            border-left: none;
+            
+        }
+        #firstli{
+            border-top-left-radius: 29px;
+            border-bottom-left-radius: 29px;
+            
+        }
+        #lastli{
+            border-top-right-radius: 29px;
+            border-bottom-right-radius: 29px;
+        }
+        ul li a:after{
+            content: "";
+            position: absolute;
+            display: inline-block;
+            border-left: 1.5px dotted #000;
+            height: 100%;
+            top: 0;
+            right: 0;
+        }
+        ul li:last-child a:after{
+            display: none;
+        }
+        ul li:hover ul li a:after{
+            display: none;
+        }
+        
+       
+     /*   main{
+             z-index: 98;
+             background: url(images/fon.png) no-repeat;
+             margin: auto;
+             width: 739px;
+             height: 311px;
+             margin-top: 10px;
+             position: relative;
+        }  
+        
+        #mainpart{
+            position: absolute;
+            width: 250px;
+            height: 170px;
+            top: 30%;
+            left: 55%;  
+        }
+        #mainpart h2{
+            color: aliceblue;
+        }
+        
+        #mainpart p{
+            position: absolute;
+            color: aliceblue;
+            top: 20%;
+            left: 0%;
+        }
+        
+        #mainpart a{
+            position: absolute;
+            color: black;
+            text-decoration: none;
+            font-weight: 900;
+            top: 75%;
+            left: 12px;
+            background-image: url(images/center_but.png);
+            padding: 2.035px 10px;
+        }
+        
+         .left{
+            position: absolute;
+            background: url(images/left_but.png);
+            height: 27px;
+            width: 12px;
+            top: 0;
+            left: -12px;
+        }
+        .right{
+            position: absolute;
+            background: url(images/right_but.png);
+            width: 16px;
+            height: 26.9px;
+            top: 0px;
+            right: -16px;
+        }
+            
+          */
+            
+        .fonpicture{
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+        }
+        .fonpicture h2{
+            position: absolute;
+            top: 30%;
+            left: 55%;
+            color: aliceblue;
+        }
+        .fonpicture p{
+            position: absolute;
+            top: 40%;
+            left: 55%;
+            color: aliceblue;
+            text-align: left;
+            width: 250px;
+        }
+        .fonpicture a{
+            position: absolute;
+            top: 75%;
+            left: 55%;
+            color: black;
+            text-decoration: none;
+            font-weight: 900;
+            background: url(images/center_but.png);
+            padding: 2px 20px;
+            margin-left: 12px;
+        }
+        .fonpicture a:before{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            background: url(images/left_but.png);
+            height: 27px;
+            width: 12px;
+            left: -12px;
+            top: 0px;
+        }
+        .fonpicture a:after{
+            content:"";
+            display: inline-block;
+            position: absolute;
+            background: url(images/right_but.png);
+            height: 27px;
+            width: 16px;
+            right: -16px;
+            top: 0;
+        }
+        .bestofbest{
+            margin-top: 20px;
+        }
+        .bestofjazz{
+            float: left;
+            text-align: justify;
+            width: 260px;
+            height: 650px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding: 150px 10px 50px 10px;
+            box-sizing: border-box;
+            background: url(images/1-t1.png) no-repeat 190px 10px;
+        }
+        
+        .bestofrap{
+            float: right;
+            text-align: justify;
+            width: 260px;
+            height: 650px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding: 150px 10px 50px 10px;
+            box-sizing: border-box;
+            background: url(images/1-t2.png) no-repeat 190px 10px;
+        }
+        .bestoffunk{
+            padding: 150px 10px 50px 10px;
+            text-align: justify;
+            width: 260px;
+            margin: 0px 271px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background: url(images/1-t3.png) no-repeat 190px 10px;
+            height: 650px;
+        }
+        .redman{
+            color: red;
+            font-weight: 900;
+            font-family: serif;
+            display: block;
+        }
+        .pot h2{
+            color: orange;
+            position: absolute;
+            top: 50px;
+        }
+        .pot{
+            position: relative;
+        }
+        .pot:after{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            border-bottom: 1px dotted gray;
+            width: 100%;
+            left: 0;
+            top: 100px;
+        }
+        
+        .link{
+            display: block;
+            text-decoration: none;
+            color: aliceblue;
+            width: 100px;
+            background: linear-gradient(to bottom, white, darkblue);
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        footer{
+            color:aliceblue;
+            text-align: center;
+            background-color: skyblue;
+            font-family: sans-serif;
+            padding: 20px;
+            margin: 10px 0px;
+            border-radius: 10px;
+            clear:both;
+        }
+        #downblock{
+            margin-top: 20px;
+            position: relative;
+            height: 300px;
+            text-align: justify;
+        }
+        #news{
+            position: absolute;
+            right: 0;
+            width: 242px;
+        }
+        #welcome{
+            position: absolute;
+            width: 520px;
+        }
+        #downblock:after{
+            content: "";
+            position: absolute;
+            border-right: 3px dotted gray;
+            height: 100%;
+            top: 0;
+            left: 540px;
+        }
+        #downblock h1{
+            margin-bottom: 30px;
+        }
+        .special{
+            font-weight: 100;
+        }
+        .bottomlink{
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 16px;
+            font-weight: 900;
+            position: absolute;
+            right: 30px;
+            margin-top: 10px;
+            padding-right: 10px;
+            background: url(images/more_bg.gif) no-repeat 100% 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="maket">
+        <header>
+            <img src="images/logo.jpg">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#" id="firstli">First</a></li>
+                <li><a href="#">Second</a></li>
+                <li><a href="#">Third</a></li>
+                <li><a href="#">Forth</a></li>
+                <li><a href="#">Fifth</a></li>
+                <li><a href="#">Six</a>
+                    <ul>
+                        <li><a href="#">Best</a>
+                            <ul>
+                                <li><a href="#">Red</a></li>
+                                <li><a href="#">Green</a></li>
+                                <li><a href="#">Yellow</a></li>
+                                <li><a href="#">Black</a></li>
+                                <li><a href="#">White</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Best</a></li>
+                        <li><a href="#">Best best</a></li>
+                        <li><a href="#">Im loving it</a></li>
+                        <li><a href="#">Im loving it</a></li>
+                        <li><a href="#">Im loving it</a></li>
+                    </ul> 
+                </li>
+                <li><a href="#">Seven seven seven</a></li>
+                <li><a href="#">88</a></li>
+                <li><a href="#" id="lastli">Nine</a></li>
+            </ul>
+        </nav>
+        
+        <div class="fonpicture">
+            <img src="images/fon.png">
+           
+                <h2>Заголовок</h2>
+                    <p>текст текст текст текст
+                    текст2 текст2 текст2 текст2</p>
+                    <a href="#">Read text</a>
+            
+        </div>
+        
+    <!--    <main>
+            <div id="mainpart">
+               <h2> Заголовок</h2>
+                    <p>текст текст текст текст<br>
+                    текст2 текст2 текст2 текст2</p>
+                    <a href="#">Read text
+                        <span class="left"></span>
+                        <span class="right"></span>
+                     </a>   
+            </div>
+            
+        </main>   -->
+        
+        
+        
+        <div class="bestofbest">
+          <div class="bestofjazz pot">
+           <h2>Featured services</h2>
+           <span class="redman">Lorem put input setup</span>
+Накануне российский президент на форуме Общероссийского народного фронта (ОНФ) заявил, что Рос сия как "независимый, суверенный", знающий себе цену и имеющий свои собственные интересы" игрок мало кому нужна. По словам российского лидера, Москва не допустит утраты государственного суверенитета. В то же время президент
+         <a href="#" class="link">Read more</a>
+         </div>
+         
+         <div class="bestofrap pot">
+           <h2>Companty careers</h2>
+           <span class="redman">Lorem put input setup</span>
+Накануне российский президент на форуме Общероссийского народного фронта (ОНФ) заявил, что Рос сия как "независимый, суверенный", знающий себе цену и имеющий свои собственные интересы" игрок мало кому нужна. По словам российского лидера, Москва не допустит утраты государственного суверенитета. В то же время президент
+         <a href="#" class="link">Read more</a>
+         </div>
+         
+         <div class="bestoffunk pot">
+           <h2>Our Seminars</h2>
+           <span class="redman">Lorem put input setup</span>
+Накануне российский президент на форуме Общероссийского народного фронта (ОНФ) заявил, что Рос сия как "независимый, суверенный", знающий себе цену и имеющий свои собственные интересы" игрок мало кому нужна. По словам российского лидера, Москва не допустит утраты государственного суверенитета. В то же время президент
+        <a href="#" class="link">Read more</a>
+         </div>
+         
+         
+        </div>
+        
+        <div id="downblock">
+           <div id="news">
+               <h1><span class="special">In the</span> News</h1>
+<p>Дата мый, суверенный", знающий себе цену и имеющий свои собственные интересы" игрок мало кому нужна. По словам российского лидера, Москва не допустит утраты государственного суверенит</p>
+          <a href="#" class="bottomlink">Read next</a>
+           </div>
+            <div id="welcome">
+              <h1>Welcome <span class="special">to our company</span></h1>
+<p>текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст оруме Общероссийского народного фронта (ОНФ) заявил, что Рос сия как "независимый, суверенный", знающий себе цену и имеющий свои собственные интересы" игрок мало кому нужна. По словам российского лидера, Москва не допустит утраты государственного суверенитета. В то же время президент отметил, что Накануне российский президент</p>
+           <a href="#" class="bottomlink">Read next</a>
+            </div>
+        </div>
+        
+        <footer>
+            2008 Solutions Online
+        </footer>
+    </div>
+</body>
+</html>
